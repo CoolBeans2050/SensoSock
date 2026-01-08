@@ -1,0 +1,417 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { 
+    Footprints, 
+    Heart, 
+    Target, 
+    Users, 
+    Award, 
+    Lightbulb,
+    GraduationCap,
+    Building2,
+    ArrowRight
+} from 'lucide-react';
+import { Button } from "@/components/ui/button";
+import { Link } from 'react-router-dom';
+import { createPageUrl } from '@/utils';
+import Navbar from '@/components/sensosock/Navbar';
+import Footer from '@/components/sensosock/Footer';
+
+export default function AboutUs() {
+    const team = [
+        {
+            name: "Dr. Emily Rodriguez",
+            role: "CEO & Co-Founder",
+            bio: "Former Stanford endocrinologist with 15 years of diabetes research experience.",
+            image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=300&h=300&fit=crop&crop=face"
+        },
+        {
+            name: "Michael Chen",
+            role: "CTO & Co-Founder",
+            bio: "MIT PhD in biomedical engineering. Previously led wearables team at Apple.",
+            image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face"
+        },
+        {
+            name: "Dr. Sarah Thompson",
+            role: "Chief Medical Officer",
+            bio: "Board-certified podiatrist specializing in diabetic foot care for 20+ years.",
+            image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=300&h=300&fit=crop&crop=face"
+        },
+        {
+            name: "James Williams",
+            role: "VP of Engineering",
+            bio: "Expert in biosensor technology with patents in thermal imaging systems.",
+            image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face"
+        },
+        {
+            name: "Dr. Aisha Patel",
+            role: "Head of Clinical Research",
+            bio: "Led clinical trials for major medical device companies. Harvard Medical School.",
+            image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&h=300&fit=crop&crop=face"
+        },
+        {
+            name: "David Kim",
+            role: "VP of Operations",
+            bio: "Scaled healthcare startups from seed to IPO. Former McKinsey consultant.",
+            image: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=300&h=300&fit=crop&crop=face"
+        }
+    ];
+
+    const values = [
+        {
+            icon: Heart,
+            title: "Patient First",
+            description: "Every decision we make starts with one question: How does this help our patients live better lives?"
+        },
+        {
+            icon: Lightbulb,
+            title: "Innovation",
+            description: "We push the boundaries of what's possible in wearable medical technology."
+        },
+        {
+            icon: Users,
+            title: "Accessibility",
+            description: "Advanced healthcare shouldn't be a luxury. We're committed to making SensoSock available to everyone who needs it."
+        },
+        {
+            icon: Award,
+            title: "Excellence",
+            description: "We hold ourselves to the highest standards in everything from product quality to customer service."
+        }
+    ];
+
+    const milestones = [
+        { year: "2019", event: "SensoSock founded by Dr. Rodriguez and Michael Chen" },
+        { year: "2020", event: "Completed first clinical trial with 500 patients" },
+        { year: "2021", event: "FDA Breakthrough Device designation received" },
+        { year: "2022", event: "Series A funding of $25M led by a]16z Bio" },
+        { year: "2023", event: "Launched nationwide with 500+ healthcare partners" },
+        { year: "2024", event: "Reached 15,000+ active users, expanded to Europe" }
+    ];
+
+    return (
+        <div className="min-h-screen bg-slate-950">
+            <Navbar />
+            
+            {/* Hero Section */}
+            <section className="relative pt-32 pb-20 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950" />
+                <div className="absolute top-1/4 -left-20 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl" />
+                <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl" />
+                
+                <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                    >
+                        <span className="inline-block px-4 py-2 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-400 text-sm font-medium mb-6">
+                            OUR STORY
+                        </span>
+                        <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6">
+                            On a Mission to
+                            <span className="block bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
+                                End Preventable Amputations
+                            </span>
+                        </h1>
+                        <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
+                            SensoSock was born from a simple belief: no one should lose a limb to a 
+                            condition that can be detected and treated early. We're combining cutting-edge 
+                            technology with compassionate care to make that vision a reality.
+                        </p>
+                    </motion.div>
+                </div>
+            </section>
+
+            {/* Origin Story */}
+            <section className="py-20 bg-white">
+                <div className="max-w-7xl mx-auto px-6 lg:px-8">
+                    <div className="grid lg:grid-cols-2 gap-16 items-center">
+                        <motion.div
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6 }}
+                        >
+                            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
+                                Why We Started
+                            </h2>
+                            <div className="space-y-4 text-slate-600 leading-relaxed">
+                                <p>
+                                    In 2018, Dr. Emily Rodriguez watched her father lose his leg to diabetes—a 
+                                    complication that could have been prevented with earlier detection. Despite 
+                                    being an endocrinologist herself, she couldn't save him from a condition that 
+                                    develops silently, without pain, until it's too late.
+                                </p>
+                                <p>
+                                    That experience sparked a question: What if we could give diabetic patients 
+                                    the same early warning system that we have for heart conditions? What if a 
+                                    simple, comfortable sock could save hundreds of thousands of limbs each year?
+                                </p>
+                                <p>
+                                    Together with biomedical engineer Michael Chen, Dr. Rodriguez set out to 
+                                    build that solution. Three years and 47 clinical studies later, SensoSock 
+                                    was born—a medical device that's already helping thousands of people keep 
+                                    their feet, their mobility, and their independence.
+                                </p>
+                            </div>
+                        </motion.div>
+                        <motion.div
+                            initial={{ opacity: 0, x: 30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6 }}
+                            className="relative"
+                        >
+                            <div className="aspect-square rounded-3xl overflow-hidden">
+                                <img 
+                                    src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=800&fit=crop"
+                                    alt="Medical research"
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+                            <div className="absolute -bottom-8 -left-8 bg-gradient-to-br from-teal-500 to-cyan-500 rounded-2xl p-6 text-white shadow-xl">
+                                <div className="text-4xl font-bold mb-1">130K+</div>
+                                <div className="text-teal-100">Lives we aim to change annually</div>
+                            </div>
+                        </motion.div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Mission & Vision */}
+            <section className="py-20 bg-slate-50">
+                <div className="max-w-7xl mx-auto px-6 lg:px-8">
+                    <div className="grid md:grid-cols-2 gap-8">
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6 }}
+                            className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-10"
+                        >
+                            <Target className="w-12 h-12 text-teal-400 mb-6" />
+                            <h3 className="text-2xl font-bold text-white mb-4">Our Mission</h3>
+                            <p className="text-slate-300 leading-relaxed">
+                                To eliminate preventable diabetic amputations by providing accessible, 
+                                intelligent foot monitoring technology that empowers patients and healthcare 
+                                providers to intervene before it's too late.
+                            </p>
+                        </motion.div>
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.15, duration: 0.6 }}
+                            className="bg-white rounded-3xl p-10 border border-slate-200"
+                        >
+                            <Lightbulb className="w-12 h-12 text-teal-600 mb-6" />
+                            <h3 className="text-2xl font-bold text-slate-900 mb-4">Our Vision</h3>
+                            <p className="text-slate-600 leading-relaxed">
+                                A world where diabetes never leads to limb loss. Where every person with 
+                                diabetes has access to the preventive care they deserve. Where technology 
+                                and medicine work together to protect what matters most.
+                            </p>
+                        </motion.div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Values */}
+            <section className="py-20 bg-white">
+                <div className="max-w-7xl mx-auto px-6 lg:px-8">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                        className="text-center mb-16"
+                    >
+                        <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
+                            Our Values
+                        </h2>
+                        <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+                            The principles that guide everything we do.
+                        </p>
+                    </motion.div>
+
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        {values.map((value, i) => (
+                            <motion.div
+                                key={i}
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.1, duration: 0.5 }}
+                                className="text-center"
+                            >
+                                <div className="w-16 h-16 rounded-2xl bg-teal-100 flex items-center justify-center mx-auto mb-6">
+                                    <value.icon className="w-8 h-8 text-teal-600" />
+                                </div>
+                                <h3 className="text-xl font-bold text-slate-900 mb-3">{value.title}</h3>
+                                <p className="text-slate-600">{value.description}</p>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Timeline */}
+            <section className="py-20 bg-slate-900">
+                <div className="max-w-4xl mx-auto px-6 lg:px-8">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                        className="text-center mb-16"
+                    >
+                        <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+                            Our Journey
+                        </h2>
+                        <p className="text-xl text-slate-400">
+                            From idea to impact in just five years.
+                        </p>
+                    </motion.div>
+
+                    <div className="relative">
+                        {/* Timeline line */}
+                        <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-teal-500 to-cyan-500" />
+
+                        <div className="space-y-8">
+                            {milestones.map((milestone, i) => (
+                                <motion.div
+                                    key={i}
+                                    initial={{ opacity: 0, x: -30 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: i * 0.1, duration: 0.5 }}
+                                    className="flex gap-8 items-start"
+                                >
+                                    <div className="w-16 h-16 rounded-full bg-slate-800 border-4 border-teal-500 flex items-center justify-center flex-shrink-0 z-10">
+                                        <span className="text-sm font-bold text-teal-400">{milestone.year}</span>
+                                    </div>
+                                    <div className="bg-slate-800/50 rounded-xl p-6 flex-1 border border-slate-700">
+                                        <p className="text-white">{milestone.event}</p>
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Team */}
+            <section className="py-20 bg-white">
+                <div className="max-w-7xl mx-auto px-6 lg:px-8">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                        className="text-center mb-16"
+                    >
+                        <span className="inline-block px-4 py-2 rounded-full bg-teal-100 text-teal-700 text-sm font-semibold mb-6">
+                            OUR TEAM
+                        </span>
+                        <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
+                            The People Behind SensoSock
+                        </h2>
+                        <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+                            World-class experts united by a shared mission to end preventable amputations.
+                        </p>
+                    </motion.div>
+
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {team.map((member, i) => (
+                            <motion.div
+                                key={i}
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.1, duration: 0.5 }}
+                                className="group"
+                            >
+                                <div className="bg-slate-50 rounded-2xl p-6 hover:bg-slate-900 transition-all duration-500">
+                                    <div className="w-24 h-24 rounded-2xl overflow-hidden mb-6">
+                                        <img 
+                                            src={member.image} 
+                                            alt={member.name}
+                                            className="w-full h-full object-cover"
+                                        />
+                                    </div>
+                                    <h3 className="text-xl font-bold text-slate-900 group-hover:text-white transition-colors">
+                                        {member.name}
+                                    </h3>
+                                    <p className="text-teal-600 group-hover:text-teal-400 font-medium mb-3 transition-colors">
+                                        {member.role}
+                                    </p>
+                                    <p className="text-slate-600 group-hover:text-slate-400 text-sm transition-colors">
+                                        {member.bio}
+                                    </p>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Partners */}
+            <section className="py-20 bg-slate-50">
+                <div className="max-w-7xl mx-auto px-6 lg:px-8">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                        className="text-center mb-12"
+                    >
+                        <h2 className="text-2xl font-bold text-slate-900 mb-4">
+                            Backed by World-Class Investors & Partners
+                        </h2>
+                    </motion.div>
+                    <div className="flex flex-wrap justify-center items-center gap-12 opacity-60">
+                        {["a16z Bio", "Stanford Medicine", "Mayo Clinic", "Johnson & Johnson", "Google Ventures", "Cleveland Clinic"].map((partner, i) => (
+                            <span key={i} className="text-xl font-bold text-slate-400">
+                                {partner}
+                            </span>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* CTA */}
+            <section className="py-20 bg-gradient-to-br from-teal-600 to-cyan-600">
+                <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                    >
+                        <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+                            Join Us in Our Mission
+                        </h2>
+                        <p className="text-xl text-teal-100 mb-8">
+                            Whether you're a patient, healthcare provider, or potential team member, 
+                            we'd love to hear from you.
+                        </p>
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                            <Link to={createPageUrl("Home")}>
+                                <Button size="lg" className="bg-white text-teal-600 hover:bg-slate-100 rounded-full px-8">
+                                    Get SensoSock
+                                    <ArrowRight className="ml-2 h-5 w-5" />
+                                </Button>
+                            </Link>
+                            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 rounded-full px-8">
+                                View Careers
+                            </Button>
+                        </div>
+                    </motion.div>
+                </div>
+            </section>
+
+            <Footer />
+        </div>
+    );
+}
