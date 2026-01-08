@@ -1,0 +1,20 @@
+import React from 'react';
+import Navbar from '@/components/sensosock/Navbar';
+import Hero from '@/components/sensosock/Hero';
+import ProblemSolution from '@/components/sensosock/ProblemSolution';
+import HowItWorks from '@/components/sensosock/HowItWorks';
+import CTASection from '@/components/sensosock/CTASection';
+import Footer from '@/components/sensosock/Footer';
+
+export default function Home() {
+    return (
+        <div className="min-h-screen bg-slate-950">
+            <Navbar />
+            <Hero />
+            <ProblemSolution />
+            <HowItWorks />
+            <CTASection />
+            <Footer />
+        </div>
+    );
+}
