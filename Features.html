@@ -1,0 +1,439 @@
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { 
+    Thermometer, 
+    Gauge, 
+    Heart, 
+    Smartphone, 
+    ShieldCheck, 
+    Battery, 
+    Droplets,
+    Zap,
+    Check,
+    ArrowRight,
+    Package,
+    Truck,
+    RefreshCw,
+    Headphones
+} from 'lucide-react';
+import { Button } from "@/components/ui/button";
+import Navbar from '@/components/sensosock/Navbar';
+import Footer from '@/components/sensosock/Footer';
+
+export default function Features() {
+    const [selectedPlan, setSelectedPlan] = useState('subscription');
+
+    const features = [
+        {
+            icon: Thermometer,
+            title: "Temperature Mapping",
+            description: "16 precision sensors create a complete thermal map of your foot, detecting inflammation before it's visible. Our proprietary algorithm identifies temperature differentials as small as 0.1°C between corresponding points on each foot.",
+            highlight: "±0.1°C accuracy"
+        },
+        {
+            icon: Gauge,
+            title: "Pressure Analysis",
+            description: "Dynamic pressure sensors identify high-pressure zones that could lead to ulceration. Real-time feedback helps you adjust activity levels and footwear choices to protect vulnerable areas.",
+            highlight: "Real-time feedback"
+        },
+        {
+            icon: Heart,
+            title: "Circulation Monitoring",
+            description: "Advanced photoplethysmography sensors track blood flow patterns throughout the day, detecting early signs of peripheral artery disease and microvascular complications.",
+            highlight: "24/7 monitoring"
+        },
+        {
+            icon: Smartphone,
+            title: "Mobile App",
+            description: "Easy-to-understand insights and alerts delivered to your phone. View trends, share reports with your doctor instantly, and receive personalized recommendations based on your data.",
+            highlight: "iOS & Android"
+        },
+        {
+            icon: ShieldCheck,
+            title: "Medical-Grade Quality",
+            description: "Meets rigorous medical device standards for safety and efficacy. Trusted by healthcare professionals and validated through extensive clinical trials with over 5,000 patients.",
+            highlight: "Clinically validated"
+        },
+        {
+            icon: Battery,
+            title: "Long Battery Life",
+            description: "Up to 7 days of continuous monitoring on a single charge. The included wireless charging dock makes recharging effortless—just place your socks on the dock overnight.",
+            highlight: "7-day battery"
+        },
+        {
+            icon: Droplets,
+            title: "Moisture Wicking",
+            description: "Breathable, antimicrobial fabric keeps feet dry and healthy. The medical-grade material is machine washable and designed to maintain sensor accuracy through hundreds of wash cycles.",
+            highlight: "Medical-grade fabric"
+        },
+        {
+            icon: Zap,
+            title: "Instant Alerts",
+            description: "Critical changes trigger immediate notifications to you, family members, and care providers. Our AI system distinguishes between normal variations and concerning patterns.",
+            highlight: "<30 second alerts"
+        }
+    ];
+
+    const pricingPlans = [
+        {
+            id: 'subscription',
+            name: "SensoSock Pro",
+            subtitle: "Monthly Subscription",
+            price: 49,
+            period: "/month",
+            description: "Best value for continuous protection",
+            features: [
+                "2 pairs of smart socks",
+                "Wireless charging dock",
+                "Mobile app access",
+                "24/7 monitoring & alerts",
+                "Monthly replacement socks",
+                "Priority customer support",
+                "Care team dashboard access",
+                "Free shipping on all orders"
+            ],
+            highlight: true,
+            cta: "Start Subscription"
+        },
+        {
+            id: 'onetime',
+            name: "SensoSock Starter",
+            subtitle: "One-Time Purchase",
+            price: 299,
+            period: "",
+            description: "Try SensoSock with no commitment",
+            features: [
+                "2 pairs of smart socks",
+                "Wireless charging dock",
+                "Mobile app access (1 year)",
+                "24/7 monitoring & alerts",
+                "Standard customer support",
+                "Care team dashboard access"
+            ],
+            highlight: false,
+            cta: "Buy Now"
+        },
+        {
+            id: 'preorder',
+            name: "SensoSock Next Gen",
+            subtitle: "Pre-Order",
+            price: 199,
+            period: "",
+            description: "Get 40% off our next generation",
+            features: [
+                "3 pairs of smart socks",
+                "Next-gen charging dock",
+                "Enhanced sensor array",
+                "Mobile app access (1 year)",
+                "24/7 monitoring & alerts",
+                "Early adopter benefits",
+                "Expected ship: Q2 2025"
+            ],
+            highlight: false,
+            cta: "Pre-Order Now"
+        }
+    ];
+
+    const whatsIncluded = [
+        { icon: Package, title: "Complete Kit", description: "2 pairs of socks, charging dock, quick start guide" },
+        { icon: Truck, title: "Free Shipping", description: "Free standard shipping on all orders in the US" },
+        { icon: RefreshCw, title: "30-Day Returns", description: "Not satisfied? Return within 30 days for full refund" },
+        { icon: Headphones, title: "Dedicated Support", description: "Access to our care team 7 days a week" }
+    ];
+
+    return (
+        <div className="min-h-screen bg-slate-950">
+            <Navbar />
+            
+            {/* Hero */}
+            <section className="relative pt-32 pb-20 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950" />
+                <div className="absolute top-1/4 -left-20 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl" />
+                <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl" />
+                
+                <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                    >
+                        <span className="inline-block px-4 py-2 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-400 text-sm font-medium mb-6">
+                            PRODUCT DETAILS
+                        </span>
+                        <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6">
+                            Advanced Technology,
+                            <span className="block bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
+                                Simple Protection
+                            </span>
+                        </h1>
+                        <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
+                            Discover every feature that makes SensoSock the most advanced diabetic foot 
+                            monitoring system available. Choose the plan that's right for you.
+                        </p>
+                    </motion.div>
+                </div>
+            </section>
+
+            {/* Detailed Features */}
+            <section className="py-20 bg-white">
+                <div className="max-w-7xl mx-auto px-6 lg:px-8">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                        className="text-center mb-16"
+                    >
+                        <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
+                            Every Feature, Explained
+                        </h2>
+                        <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+                            Technology designed with one goal: keeping you healthy and active.
+                        </p>
+                    </motion.div>
+
+                    <div className="grid md:grid-cols-2 gap-8">
+                        {features.map((feature, i) => (
+                            <motion.div
+                                key={i}
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.1, duration: 0.5 }}
+                                className="bg-slate-50 rounded-2xl p-8 hover:shadow-lg transition-shadow"
+                            >
+                                <div className="flex gap-6">
+                                    <div className="w-14 h-14 rounded-xl bg-teal-100 flex items-center justify-center flex-shrink-0">
+                                        <feature.icon className="w-7 h-7 text-teal-600" />
+                                    </div>
+                                    <div>
+                                        <div className="flex items-center gap-3 mb-2">
+                                            <h3 className="text-xl font-bold text-slate-900">{feature.title}</h3>
+                                            <span className="px-3 py-1 rounded-full bg-teal-100 text-teal-700 text-xs font-semibold">
+                                                {feature.highlight}
+                                            </span>
+                                        </div>
+                                        <p className="text-slate-600 leading-relaxed">
+                                            {feature.description}
+                                        </p>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* What's Included */}
+            <section className="py-20 bg-slate-50">
+                <div className="max-w-7xl mx-auto px-6 lg:px-8">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                        className="text-center mb-12"
+                    >
+                        <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
+                            What's Included
+                        </h2>
+                    </motion.div>
+
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {whatsIncluded.map((item, i) => (
+                            <motion.div
+                                key={i}
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.1, duration: 0.5 }}
+                                className="bg-white rounded-xl p-6 text-center"
+                            >
+                                <div className="w-12 h-12 rounded-full bg-teal-100 flex items-center justify-center mx-auto mb-4">
+                                    <item.icon className="w-6 h-6 text-teal-600" />
+                                </div>
+                                <h3 className="font-bold text-slate-900 mb-2">{item.title}</h3>
+                                <p className="text-slate-600 text-sm">{item.description}</p>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Pricing */}
+            <section className="py-20 bg-slate-900">
+                <div className="max-w-7xl mx-auto px-6 lg:px-8">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                        className="text-center mb-16"
+                    >
+                        <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+                            Choose Your Plan
+                        </h2>
+                        <p className="text-xl text-slate-400 max-w-2xl mx-auto">
+                            Flexible options to fit your needs and budget.
+                        </p>
+                    </motion.div>
+
+                    <div className="grid lg:grid-cols-3 gap-8">
+                        {pricingPlans.map((plan, i) => (
+                            <motion.div
+                                key={plan.id}
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.15, duration: 0.6 }}
+                                className={`relative rounded-3xl p-8 ${
+                                    plan.highlight 
+                                        ? 'bg-gradient-to-br from-teal-500 to-cyan-500 text-white' 
+                                        : 'bg-slate-800 text-white'
+                                }`}
+                            >
+                                {plan.highlight && (
+                                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-white text-teal-600 rounded-full text-sm font-bold">
+                                        MOST POPULAR
+                                    </div>
+                                )}
+                                <div className="mb-6">
+                                    <h3 className="text-2xl font-bold mb-1">{plan.name}</h3>
+                                    <p className={plan.highlight ? 'text-teal-100' : 'text-slate-400'}>
+                                        {plan.subtitle}
+                                    </p>
+                                </div>
+                                <div className="mb-6">
+                                    <span className="text-5xl font-bold">${plan.price}</span>
+                                    <span className={plan.highlight ? 'text-teal-100' : 'text-slate-400'}>
+                                        {plan.period}
+                                    </span>
+                                </div>
+                                <p className={`mb-8 ${plan.highlight ? 'text-teal-100' : 'text-slate-400'}`}>
+                                    {plan.description}
+                                </p>
+                                <ul className="space-y-4 mb-8">
+                                    {plan.features.map((feature, j) => (
+                                        <li key={j} className="flex items-start gap-3">
+                                            <Check className={`w-5 h-5 flex-shrink-0 mt-0.5 ${
+                                                plan.highlight ? 'text-white' : 'text-teal-400'
+                                            }`} />
+                                            <span className={plan.highlight ? 'text-white' : 'text-slate-300'}>
+                                                {feature}
+                                            </span>
+                                        </li>
+                                    ))}
+                                </ul>
+                                <Button 
+                                    className={`w-full py-6 rounded-full text-lg ${
+                                        plan.highlight 
+                                            ? 'bg-white text-teal-600 hover:bg-slate-100' 
+                                            : 'bg-teal-500 text-white hover:bg-teal-600'
+                                    }`}
+                                >
+                                    {plan.cta}
+                                    <ArrowRight className="ml-2 h-5 w-5" />
+                                </Button>
+                            </motion.div>
+                        ))}
+                    </div>
+
+                    {/* Insurance note */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.3, duration: 0.6 }}
+                        className="mt-12 text-center"
+                    >
+                        <p className="text-slate-400">
+                            💡 Many insurance plans cover SensoSock. 
+                            <a href="#" className="text-teal-400 hover:text-teal-300 ml-1">
+                                Check your eligibility →
+                            </a>
+                        </p>
+                    </motion.div>
+                </div>
+            </section>
+
+            {/* FAQ */}
+            <section className="py-20 bg-white">
+                <div className="max-w-3xl mx-auto px-6 lg:px-8">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                        className="text-center mb-12"
+                    >
+                        <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
+                            Frequently Asked Questions
+                        </h2>
+                    </motion.div>
+
+                    <div className="space-y-6">
+                        {[
+                            {
+                                q: "How do I know which size to order?",
+                                a: "SensoSock comes in 5 sizes (XS-XL). Use our online sizing guide or contact support for help. If between sizes, we recommend sizing up for comfort."
+                            },
+                            {
+                                q: "Can I wear SensoSock all day?",
+                                a: "Yes! SensoSock is designed for all-day wear. The breathable, moisture-wicking fabric keeps your feet comfortable whether you're at work, exercising, or relaxing at home."
+                            },
+                            {
+                                q: "How do I wash my SensoSock?",
+                                a: "Simply remove the small sensor pod and machine wash the socks in cold water. Air dry or tumble dry on low. The sensor pod can be wiped clean with a damp cloth."
+                            },
+                            {
+                                q: "Will my doctor have access to my data?",
+                                a: "Only if you choose to share it. You can invite your healthcare provider to view your dashboard, or export reports to share during appointments."
+                            },
+                            {
+                                q: "What happens if I need to cancel my subscription?",
+                                a: "You can cancel anytime with no penalties. You'll continue to have access until the end of your billing period, and you keep all hardware."
+                            }
+                        ].map((faq, i) => (
+                            <motion.div
+                                key={i}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.1, duration: 0.5 }}
+                                className="bg-slate-50 rounded-xl p-6"
+                            >
+                                <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
+                                <p className="text-slate-600">{faq.a}</p>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Final CTA */}
+            <section className="py-20 bg-gradient-to-br from-teal-600 to-cyan-600">
+                <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                    >
+                        <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+                            Ready to Protect Your Feet?
+                        </h2>
+                        <p className="text-xl text-teal-100 mb-8">
+                            Join thousands of diabetic patients who trust SensoSock for 24/7 protection.
+                        </p>
+                        <Button size="lg" className="bg-white text-teal-600 hover:bg-slate-100 rounded-full px-10 py-6 text-lg">
+                            Get Started Today
+                            <ArrowRight className="ml-2 h-5 w-5" />
+                        </Button>
+                    </motion.div>
+                </div>
+            </section>
+
+            <Footer />
+        </div>
+    );
+}
